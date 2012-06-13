@@ -37,7 +37,7 @@ define(function () {
 			require([
 
 			// Loads JasmineJS, SinonJS, and services mocking module
-			  'css!css/jasmine.css'
+			  'css!css/jasmine.min.css'
 			, 'sinonjs'
 			, 'jasmine'
 			, 'jasmineHtml'

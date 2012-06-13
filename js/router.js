@@ -37,7 +37,9 @@ define([
 
 
 		, initialize: function () {
+			// TODO: Comments out the following if wishing not to record the routes in browser's history
 			Backbone.history.start();
+			// END TODO
 		}
 
 	});
