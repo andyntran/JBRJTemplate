@@ -1,7 +1,7 @@
 define([
 
 'mockServices',
-'../../views/views.default'
+'../../views/default'
 
 ], function (mockServices, defaultView) {
 

@@ -13,8 +13,8 @@ define([
 				expect(router).toBeDefined();
 			});
 
-			it('should have specsRunningRoute() route', function () {
-				expect(typeof router.specsRunningRoute).toEqual('function');
+			it('should have runSpecs() route', function () {
+				expect(typeof router.runSpecs).toEqual('function');
 			});
 
 			it('should have defaultRoute() route', function () {
@@ -30,8 +30,8 @@ define([
 
 			describe('GIVEN the page is running in test mode', function () {
 				
-				it('should have a spec report DOM with id="#TrivialReporter"', function () {
-					expect($('#TrivialReporter').length).toBeGreaterThan(0);
+				it('should have a spec report DOM with class="jasmine_reporter"', function () {
+					expect($('.jasmine_reporter').length).toBeGreaterThan(0);
 				});
 				
 			});

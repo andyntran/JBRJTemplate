@@ -1,9 +1,17 @@
+// Fixed problem with Backbone put query string in URL routing parameter
+(function(old) {
+    Backbone.History.prototype.getFragment = function() {
+        return old.apply(this, arguments).replace(/\?.*/, '');
+    };
+})(Backbone.History.prototype.getFragment);
+
+
 define([
 
   'specsRunner'
 
 // TODO: Includes other Javascript modules/dependencies
-, 'views/views.default'
+, 'views/default'
 // END TODO
 
 ], function (specsRunner, defaultView) {
@@ -13,7 +21,8 @@ define([
 		  routes: {
 
 			// Specs running route
-			  'dev/specs': 'specsRunningRoute'
+			  'dev/specs': 'runSpecs'
+			, 'dev/specs/:reporter': 'runSpecs'
 
 			// TODO: Sets up other routes
 			// END TODO
@@ -22,8 +31,8 @@ define([
 			, '*path': 'defaultRoute'
 		}
 
-		, specsRunningRoute: function () {
-			specsRunner.run();
+		, runSpecs: function (reporter) {
+			specsRunner.execute(reporter);
 		}
 
 		// TODO: Sets other route methods
